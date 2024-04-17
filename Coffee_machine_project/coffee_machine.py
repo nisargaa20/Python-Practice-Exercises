@@ -39,6 +39,18 @@ def check_resources(order_ingredients):
             print(f"Sorry there is not enough {item}")
             return False
         return True
+    
+def process_coins():
+    print("Please insert coins:")
+    total=0
+    coins_five=int(input("How many 5rs coins?:"))
+    coins_ten=int(input("How many 10rs coins?:"))
+    coins_twenty=int(input("How many 20rs coins?:"))
+    total=coins_five*5+coins_ten*10+coins_twenty*20
+    return total
+
+
+
 
 is_on=True
 
@@ -54,5 +66,6 @@ while is_on:
     else:
         coffee_type=Menu[choice]
         print(coffee_type)
-        check_resouces(coffee_type['ingredients'])
+        if check_resouces(coffee_type['ingredients']):
+            process_coins()
 
